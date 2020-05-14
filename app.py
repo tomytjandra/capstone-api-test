@@ -1,4 +1,5 @@
-from flask import Flask, request 
+from flask import Flask, request
+import sqlite3
 import pandas as pd 
 app = Flask(__name__) 
 
