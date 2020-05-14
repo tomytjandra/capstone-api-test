@@ -38,6 +38,16 @@ def documentation():
         </ol>
     '''
 
+@app.route('/data/genres', methods = ['GET'])
+def get_genres():
+    conn = sqlite3.connect("data_input/chinook.db")
+    data = pd.read_sql_query(
+        '''
+        SELECT *
+        FROM genres
+        ''', conn)
+    return data.to_json()
+
 @app.route('/data/get/<data_name>', methods=['GET']) 
 def get_data(data_name): 
     data = pd.read_csv('data/' + str(data_name))
