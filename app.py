@@ -40,7 +40,7 @@ def documentation():
 
 @app.route('/data/genres', methods = ['GET'])
 def get_genres():
-    conn = sqlite3.connect("data_input/chinook.db")
+    conn = sqlite3.connect("data/chinook.db")
     data = pd.read_sql_query(
         '''
         SELECT *
